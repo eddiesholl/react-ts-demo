@@ -1,0 +1,9 @@
+{
+  "name": "react-ts-demo",
+  "version": "1.0.0",
+  "description": "Demo app for babel/react/typescript",
+  "main": "index.js",
+  "repository": "git@github.com:eddiesholl/react-ts-demo.git",
+  "author": "eddie.sholl@gmail.com",
+  "license": "MIT"
+}
