@@ -4,7 +4,8 @@ module.exports = function(api) {
   return {
     'presets': [
       '@babel/env',
-      '@babel/react'
+      '@babel/react',
+      '@babel/typescript'
     ],
     'plugins': [
       '@babel/plugin-proposal-object-rest-spread',

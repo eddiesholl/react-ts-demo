@@ -27,7 +27,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(ts|tsx|js)$/,
         include: path.join(projectRoot, 'src'),
         exclude: path.join(projectRoot, 'node_modules'),
         use: {
@@ -41,6 +41,7 @@ module.exports = {
   },
 
   resolve: {
+    extensions: [".ts", ".tsx", ".js", ".json"],
     modules: [
       'node_modules',
       path.join(projectRoot, 'src')
