@@ -1,6 +1,7 @@
 const path = require('path')
 const glob = require('glob')
 const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const projectRoot = path.resolve(__dirname)
 
@@ -21,8 +22,8 @@ module.exports = {
     filename: (() => {
       return '[name].js'
     })()
-
   },
+  plugins: [new HtmlWebpackPlugin({ template: 'index.html' })],
   module: {
     rules: [
       {

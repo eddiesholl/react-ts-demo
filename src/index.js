@@ -14,7 +14,7 @@ const render = () => {
     <Provider store={store}>
         <AppEntry />
     </Provider>,
-    document.getElementById('main')
+    document.getElementById('root')
   )
 }
 

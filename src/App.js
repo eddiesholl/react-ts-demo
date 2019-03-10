@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import withProp from './withProp'
+
 export class App extends Component {
   render() {
     const { prop1, prop2 } = this.props

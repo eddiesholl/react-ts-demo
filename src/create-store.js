@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 
-import rootReducer from 'redux/modules/reducer'
+import rootReducer from './redux/modules/reducer'
 
 export default () => {
   const middlewares = [
@@ -14,9 +14,9 @@ export default () => {
   middlewares.push(createLogger())
 
   const store = createStore(
-    rootReducer,
-    reduxDev,
-    applyMiddleware(...middlewares)
+    rootReducer//,
+    // reduxDev,
+    // applyMiddleware(...middlewares)
   )
 
   return store

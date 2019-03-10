@@ -53,6 +53,6 @@ export const events = (state = {}, action) => {
 }
 
 export default combineReducers({
-  state,
+  foo,
   events
 })
