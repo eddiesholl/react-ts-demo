@@ -6,6 +6,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const projectRoot = path.resolve(__dirname)
 
 module.exports = {
+  mode: 'development',
+  devtool: 'inline-source-map',
   entry: (() => {
     const entry = {
       bundle: path.join(__dirname, 'src', 'index.js')
