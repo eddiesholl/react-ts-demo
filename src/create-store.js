@@ -1,8 +1,8 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import thunk from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 
-import rootReducer from './redux/modules/reducer'
+import { todosReducer } from './todo/redux'
 
 export default () => {
   const middlewares = [
@@ -14,9 +14,11 @@ export default () => {
   middlewares.push(createLogger())
 
   const store = createStore(
-    rootReducer//,
-    // reduxDev,
-    // applyMiddleware(...middlewares)
+    combineReducers({ todos: todosReducer }),
+    compose(
+      reduxDev,
+      applyMiddleware(...middlewares)
+    )
   )
 
   return store

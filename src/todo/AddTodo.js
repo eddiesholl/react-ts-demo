@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
+
+import { createTodo } from './redux'
 
 const AddTodo = (props) => {
   const { createTodo } = props
@@ -12,4 +15,4 @@ const AddTodo = (props) => {
   )
 }
 
-export default AddTodo
+export default connect(null, { createTodo })(AddTodo)
