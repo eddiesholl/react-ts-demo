@@ -1,9 +1,11 @@
 import React from 'react'
 
-const TodoCounter = (props) => {
-  const { items } = props
+import connectTodos from './connectTodos'
 
-  return <div>{`You've got ${items.length} items to remember 🤔`}</div>
+const TodoCounter = (props) => {
+  const { todos } = props
+
+  return <div>{`You've got ${todos.length} items to remember 🤔`}</div>
 }
 
-export default TodoCounter
+export default connectTodos(TodoCounter)

@@ -4,18 +4,14 @@ import ListView from './ListView'
 import AddTodo from './AddTodo'
 import TodoCounter from './TodoCounter'
 
-const Manager = (props) => {
-  const { todos } = props
-
+const Manager = () => {
   return (
     <div>
-      <ListView items={todos} />
+      <ListView />
       <AddTodo />
-      <TodoCounter items={todos} />
+      <TodoCounter />
     </div>
   )
 }
 
-import connectTodos from './connectTodos'
-
-export default connectTodos(Manager)
+export default Manager

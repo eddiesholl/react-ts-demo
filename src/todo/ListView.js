@@ -1,15 +1,16 @@
 import React from 'react'
+import connectTodos from './connectTodos';
 
 const ListView = (props) => {
-  const { items } = props
+  const { todos } = props
 
   return (
     <ol>
       {
-        items.map(item => <li key={item.id}>{item.text}</li>)
+        todos.map(todo => <li key={todo.id}>{todo.text}</li>)
       }
     </ol>
   )
 }
 
-export default ListView
+export default connectTodos(ListView)
