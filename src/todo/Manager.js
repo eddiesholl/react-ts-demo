@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
 
 import ListView from './ListView'
 import AddTodo from './AddTodo'
@@ -17,12 +16,6 @@ const Manager = (props) => {
   )
 }
 
-import { selectTodos } from './redux'
+import connectTodos from './connectTodos'
 
-const mapStateToProps = state => {
-  return {
-    todos: selectTodos(state)
-  }
-}
-
-export default connect(mapStateToProps, null)(Manager)
+export default connectTodos(Manager)
