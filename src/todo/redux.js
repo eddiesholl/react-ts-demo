@@ -25,3 +25,5 @@ export const todosReducer = (state = startingList, action) => {
       return state
   }
 }
+
+export const selectTodos = state => state.todos || []
