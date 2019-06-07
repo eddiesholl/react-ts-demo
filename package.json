@@ -7,7 +7,8 @@
   "author": "eddie.sholl@gmail.com",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "lint": "eslint src"
   },
   "dependencies": {
     "@babel/core": "^7.3.4",
@@ -33,5 +34,9 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.13.0"
   }
 }
