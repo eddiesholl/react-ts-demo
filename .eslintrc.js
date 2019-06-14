@@ -1,13 +1,9 @@
-{
-    "parser": "@typescript-eslint/parser",
+module.exports = {
     "env": {
         "browser": true,
         "es6": true
     },
-    "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended"
-    ],
+    "extends": "eslint:recommended",
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -20,11 +16,9 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "@typescript-eslint"
+        "react"
     ],
     "rules": {
-        "@typescript-eslint/indent": ["error", 2],
         "accessor-pairs": "error",
         "array-bracket-newline": "off",
         "array-bracket-spacing": "error",
@@ -99,7 +93,6 @@
         "indent-legacy": "off",
         "init-declarations": "off",
         "jsx-quotes": "error",
-        "react/jsx-uses-vars": "error",
         "key-spacing": "error",
         "keyword-spacing": [
             "error",
@@ -296,4 +289,4 @@
         "yield-star-spacing": "error",
         "yoda": "error"
     }
-}
+};
