@@ -1,3 +1,5 @@
+const typescriptEslintRecommended = require('@typescript-eslint/eslint-plugin').configs.recommended;
+
 module.exports = {
     "env": {
         "browser": true,
@@ -17,6 +19,41 @@ module.exports = {
     },
     "plugins": [
         "react"
+    ],
+    overrides: [
+        // example taken from https://github.com/eslint/eslint/issues/8813#issuecomment-456034732
+        {
+            files: ['**/*.ts', '**/*.tsx'],
+            plugins: ['@typescript-eslint'],
+            parser: '@typescript-eslint/parser',
+            parserOptions: {
+                warnOnUnsupportedTypeScriptVersion: true,
+            },
+            // Workaround for no nested extends possible.
+            // see https://github.com/eslint/eslint/issues/8813
+            // working solution would be following, if we had nested extends
+            // extends: [
+            //   'eslint:recommended',
+            //   'plugin:@typescript-eslint/recommended',
+            // ],
+            rules: Object.assign(typescriptEslintRecommended.rules, {
+                "@typescript-eslint/indent": ["error", 2],
+            }),
+            settings: {
+            'import/resolver': {
+              node: {
+                // Allow import and resolve for *.ts modules.
+                extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx'],
+              },
+            },
+          },
+        },
+        {
+          files: ['*.spec.ts'],
+          env: {
+            jest: true,
+          },
+        },
     ],
     "rules": {
         "accessor-pairs": "error",
