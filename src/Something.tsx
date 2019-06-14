@@ -12,7 +12,9 @@ export interface SomethingProps {
 export class Something extends Component<SomethingProps, {}> {
   render() {
     const { prop1, prop2, extraFuncProp, fromState } = this.props
-    
+
+    const foo = 'this should cause lint error'
+
     return (
       <div>
         <div>Prop1: {prop1}</div>
